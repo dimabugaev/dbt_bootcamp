@@ -2,8 +2,10 @@ version: 2
 
 models:
   - name: dim_listings_cleansed
+    description: 'This is table contain cleansed data about listings'
     columns:
       - name: listing_id
+        description: 'Primary key of a table'
         tests:
           - unique
           - not_null
@@ -20,3 +22,20 @@ models:
                        'Private room',
                        'Shared room',
                        'Hotel room']
+      - name: minimum_nights
+        description: '{{ doc("dim_listings_cleansed_minimum_night") }}'
+        tests:
+          - positive_value
+  - name: dim_hosts_cleansed
+    description: 'This is table contain cleansed data about hosts'
+    columns:
+      - name: host_id
+        description: 'Primary key of a table'
+      - name: host_name
+        description: '{{ doc("dim_hosts_cleansed_host_name") }}'
+      - name: is_superhost
+        description: 'flag about superhost status'
+      - name: created_at
+        description: 'date create of host record'
+      - name: updated_at
+        description: 'date of last change the record'  
