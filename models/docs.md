@@ -6,5 +6,5 @@ value is controlling to not ecual 0 and all 0 replacement to 1
 
 {% docs dim_hosts_cleansed_host_name %}
 This field was processing to control to equal `NULL` values. 
-If comming value is null it's replace for `Anonimous`
+If comming value is null it's replace for `Anonimous` test again and again
 {% enddocs %}
